@@ -1,0 +1,130 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #FF0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.agent-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agent {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.agent-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.agent-info {
+    flex-grow: 1;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.rating, .location, .experience {
+    margin: 5px 0;
+}
+
+.agent-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-button, .call-button {
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-button {
+    background-color: #283ba7e6;
+    color: #fff;
+}
+
+.call-button {
+    background-color: #FF0000;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .agent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .agent-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .agent {
+        width: 90%;
+    }
+}
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

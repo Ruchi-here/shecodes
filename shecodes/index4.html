@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepaid Service Agents</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <header>
+        <h1>DTH Service Agents</h1>
+    </header>
+    <main>
+        <section class="agent-list">
+            <!-- Repeat this article for each agent -->
+            <article class="agent">
+                <img src="male.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Rohit Chauhan</h2>
+                    <p class="rating">Rating: ★★★★★</p>
+                    <p class="location">Location: R-Pocket,Dilshad Garden</p>
+                    <p class="experience">Experience: 3 Years</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+            <!-- End of agent article -->
+            <article class="agent">
+                <img src="female.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Ruchi Kumari</h2>
+                    <p class="rating">Rating: ★★★</p>
+                    <p class="location">Location: Okhla Phase 3</p>
+                    <p class="experience">Experience: 2 Years</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+            <article class="agent">
+                <img src="cartoon.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Virat Pandey</h2>
+                    <p class="rating">Rating: ★★★★★</p>
+                    <p class="location">Location: New Delhi Metro Station</p>
+                    <p class="experience">Experience: 9 Years</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+            <article class="agent">
+                <img src="male2.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Kartik Sharma</h2>
+                    <p class="rating">Rating: ★★★★</p>
+                    <p class="location">Location: Kavita Nagar</p>
+                    <p class="experience">Experience: 6 Years</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+            <article class="agent">
+                <img src="cartoon.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Sudhir Kunwar</h2>
+                    <p class="rating">Rating: ★★★★★</p>
+                    <p class="location">Location: Shalimar Garden</p>
+                    <p class="experience">Experience: 5 Years</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+            <article class="agent">
+                <img src="male.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Ravi Bhasin</h2>
+                    <p class="rating">Rating: ★★★★</p>
+                    <p class="location">Location: Palam Metro Station</p>
+                    <p class="experience">Experience: 1 Year</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+            <article class="agent">
+                <img src="cartoon.webp" alt="Agent Name" class="agent-photo">
+                <div class="agent-info">
+                    <h2>Manoj</h2>
+                    <p class="rating">Rating: ★★★★★</p>
+                    <p class="location">Location: Kashmere Gate</p>
+                    <p class="experience">Experience: 5 Years</p>
+                </div>
+                <div class="agent-actions">
+                    <button class="book-button">Book Now</button>
+                    <button class="call-button">Call</button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="confirmationMessage"></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const callButtons = document.querySelectorAll('.call-button');
+            callButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const agentInfo = this.closest('.agent').querySelector('.agent-info');
+                    const agentName = agentInfo.querySelector('h2').textContent;
+                    const phoneNumber = "123-456-7890"; // This should be dynamically set based on the agent
+                    alert(`Call ${agentName} at ${phoneNumber}`);
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        const bookButtons = document.querySelectorAll('.book-button');
+        const modal = document.getElementById('bookingModal');
+        const span = document.getElementsByClassName("close")[0];
+        const message = document.getElementById('confirmationMessage');
+
+        bookButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const agentInfo = this.closest('.agent').querySelector('.agent-info');
+                const agentName = agentInfo.querySelector('h2').textContent;
+                message.innerHTML = `Booking confirmed for ${agentName}. You will receive an email confirmation shortly.`;
+                modal.style.display = "block";
+            });
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    });
+    </script>
+</body>
+</html>
